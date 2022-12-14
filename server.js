@@ -25,7 +25,8 @@ mongoose.connect(DB_URL, {
     useUnifiedTopology: true
 })
 .then(() => {
-    console.log("Mongoose Connected Successfully")
+    console.info("Mongoose Connected Successfully")
+    // console.log('%c Oh my heavens! ', 'background: #222; color: #bada55');
 })
 .catch((err) => console.log("Mongoose Connection Failed", err))
 
