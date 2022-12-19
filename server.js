@@ -19,31 +19,25 @@ connectDb()
 const postRoutes = require('./Routes/posts')
 
 //App Middleware
-app.use(bodyParser.json())
+app.use(express.json())
 app.use(cors())
 
 
 
 // Route Middleware
-app.use(postRoutes)
+// app.use(postRoutes)
 
 
-// mongoose.connect(DB_URL, {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true
-// })
+app.get("/posts", postRoutes.fetchPosts)
 
-app.get("/", (req, res) => {
-    res.json({hello: "Hima kanawa huththo"})
-})
+app.get("/post/:id", postRoutes.fetchPost)
 
-app.post('/post', (req, res) => {
-    //Get the data from the request
+app.post('/post', postRoutes.createPost)
 
-    //Create a post
+app.put('/posts/:id', postRoutes.updatePost)
 
-    //Respond with the post
-})
+app.delete('/posts/:id', postRoutes.deletePost)
+
 
 app.listen(process.env.PORT, () => {
     console.log(`App is running on ${process.env.PORT}`)
