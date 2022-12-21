@@ -119,18 +119,18 @@ const updatePost = async (event) => {
 
   return(<>
       <div>
-        <h2>Posts:</h2>
-        {posts && posts.map((post) => {
-          return(
-            <div key={post._id}>
+      <h2>Posts:</h2>
+      {posts && posts.map((post) => {
+      return(
+          <div key={post._id}>
               <h3>{post.topic}</h3>
               <h4>{post.description}</h4>
               <p>{post.postCategory}</p>
               <button onClick={() => deletePost(post._id)}>Delete Post</button>
               <button onClick={() => toggleUpdate(post)}>Update Post</button>
-            </div>
-          )
-        })}
+          </div>
+      )
+      })}
 
         {updateForm._id && (
         <div className="update">
