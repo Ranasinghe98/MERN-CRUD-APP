@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import './app.css'
 
 const App = () => {
   const [posts, setPosts] = useState(null)
@@ -119,18 +120,23 @@ const updatePost = async (event) => {
 
   return(<>
       <div>
-        <h2>Posts:</h2>
-        {posts && posts.map((post) => {
-          return(
-            <div key={post._id}>
+      <h2>Posts:</h2>
+      {posts && posts.map((post) => {
+      return(
+          <div key={post._id}>
               <h3>{post.topic}</h3>
               <h4>{post.description}</h4>
               <p>{post.postCategory}</p>
-              <button onClick={() => deletePost(post._id)}>Delete Post</button>
-              <button onClick={() => toggleUpdate(post)}>Update Post</button>
-            </div>
-          )
-        })}
+              <button onClick={() => deletePost(post._id)}>
+              <i class="fa-solid fa-trash"></i>
+              Delete Post
+              </button>
+              <button onClick={() => toggleUpdate(post)}>
+              <i class="fa-solid fa-pen-to-square"></i>
+              Update Post</button>
+          </div>
+      )
+      })}
 
         {updateForm._id && (
         <div className="update">
@@ -139,7 +145,9 @@ const updatePost = async (event) => {
           <input onChange={updateFieldChange} value={updateForm.topic} name='topic' />
           <textarea onChange={updateFieldChange} value={updateForm.description} name='description' />
           <input onChange={updateFieldChange} value={updateForm.postCategory} name='postCategory' />
-          <button type='submit'>Update Post</button>
+          <button type='submit'>
+          <i class="fa-solid fa-pen-to-square"></i>
+          Update Post</button>
         </form>
         </div>
         )}
@@ -151,7 +159,10 @@ const updatePost = async (event) => {
             <input onChange={updateCreateFormField} value={createForm.topic} name='topic' />
             <textarea onChange={updateCreateFormField} value={createForm.description} name='description' />
             <input onChange={updateCreateFormField} value={createForm.postCategory} name='postCategory' />
-            <button type='submit'>Create Post</button>
+            <button type='submit'>
+            Create Post
+            <i class="fa-solid fa-pen"></i>
+            </button>
           </form>
         </div>
         )}
