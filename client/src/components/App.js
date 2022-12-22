@@ -120,23 +120,26 @@ const updatePost = async (event) => {
 
   return(<>
       <div>
-      <h2>Posts:</h2>
+      <h2 className='head-title'>All Posts</h2>
+      <div className="post-wrapper">
       {posts && posts.map((post) => {
-      return(
-          <div key={post._id}>
-              <h3>{post.topic}</h3>
-              <h4>{post.description}</h4>
-              <p>{post.postCategory}</p>
-              <button onClick={() => deletePost(post._id)}>
-              <i class="fa-solid fa-trash"></i>
-              Delete Post
-              </button>
-              <button onClick={() => toggleUpdate(post)}>
-              <i class="fa-solid fa-pen-to-square"></i>
-              Update Post</button>
-          </div>
-      )
-      })}
+        return(
+            <div className="post-box" key={post._id}>
+                <h3>{post.topic}</h3>
+                <h4>{post.description}</h4>
+                <p>{post.postCategory}</p>
+                <button className="dlt-btn" onClick={() => deletePost(post._id)}>
+                <i class="fa-solid fa-trash"></i>
+                Delete Post
+                </button>
+                <button className="edit-btn" onClick={() => toggleUpdate(post)}>
+                <i class="fa-solid fa-pen-to-square"></i>
+                Update Post</button>
+            </div>
+        )
+        })}
+      </div>
+
 
         {updateForm._id && (
         <div className="update">
@@ -156,9 +159,9 @@ const updatePost = async (event) => {
         <div className="insert">
           <h2>Create Post</h2>
           <form onSubmit={createPost}>
-            <input onChange={updateCreateFormField} value={createForm.topic} name='topic' />
-            <textarea onChange={updateCreateFormField} value={createForm.description} name='description' />
-            <input onChange={updateCreateFormField} value={createForm.postCategory} name='postCategory' />
+            <input onChange={updateCreateFormField} value={createForm.topic} name='topic' placeholder='Post Topic'/>
+            <textarea onChange={updateCreateFormField} value={createForm.description} name='description' placeholder='Post Body'/>
+            <input onChange={updateCreateFormField} value={createForm.postCategory} name='postCategory' placeholder='Post Category'/>
             <button type='submit'>
             Create Post
             <i class="fa-solid fa-pen"></i>
