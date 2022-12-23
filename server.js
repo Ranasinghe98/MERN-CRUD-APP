@@ -9,6 +9,9 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const connectDb = require('./config/connectDb')
 
+//PORT Config
+const PORT = process.env.PORT || 8000
+
 // create express app
 const app = express()
 
@@ -39,6 +42,6 @@ app.put('/posts/:id', postRoutes.updatePost)
 app.delete('/posts/:id', postRoutes.deletePost)
 
 
-app.listen(process.env.PORT, () => {
+app.listen(PORT, () => {
     console.log(`App is running on ${process.env.PORT}`)
 })
