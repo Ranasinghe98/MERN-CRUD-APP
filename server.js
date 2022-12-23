@@ -43,5 +43,5 @@ app.delete('/posts/:id', postRoutes.deletePost)
 
 
 app.listen(PORT, () => {
-    console.log(`App is running on ${process.env.PORT}`)
+    console.log(`App is running on ${PORT}`)
 })
