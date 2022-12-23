@@ -22,14 +22,25 @@ h2{
     font-size: 3rem;
 }
 
-h3, h4, p{
-    color: #252525;
+h3, h4{
+    color: #1c1c1c;
     font-family: 'Poppins', sans-serif;
 }
 
 h3{
     font-weight: bold;
     font-size: 1.5rem;
+}
+
+h4{
+    font-weight: 500;
+}
+
+p{
+    font-size: 14px;
+    color: #3d3c3c;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: underline;
 }
 
 .post-wrapper{
@@ -54,12 +65,37 @@ button{
     font-family: 'Poppins', sans-serif;
 }
 
+button:hover{
+    cursor: pointer;
+}
+
 .post-box button{
     margin: 5px 5px;
 }
 
 .post-box button i{
     margin-right: 5px;
+}
+
+.dlt-btn{
+    color: red;
+    border: 1px solid red;
+}
+
+.edit-btn{
+    color: #fff; 
+    border: 1px solid #fff;
+    background-color: #0419b5;
+}
+
+form i{
+    margin-left: 5px;
+}
+
+.form-btn{
+    background-color: #51af51;
+    color: #fff;
+    border: 1px solid black;
 }
 
 .insert{
@@ -145,3 +181,4 @@ button{
 .update form button{
     width: 150px;
 }
+

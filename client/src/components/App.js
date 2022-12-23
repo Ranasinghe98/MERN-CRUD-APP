@@ -148,9 +148,10 @@ const updatePost = async (event) => {
           <input onChange={updateFieldChange} value={updateForm.topic} name='topic' />
           <textarea onChange={updateFieldChange} value={updateForm.description} name='description' />
           <input onChange={updateFieldChange} value={updateForm.postCategory} name='postCategory' />
-          <button type='submit'>
+          <button className='form-btn' type='submit'>
+          Update Post
           <i class="fa-solid fa-pen-to-square"></i>
-          Update Post</button>
+          </button>
         </form>
         </div>
         )}
@@ -162,7 +163,7 @@ const updatePost = async (event) => {
             <input onChange={updateCreateFormField} value={createForm.topic} name='topic' placeholder='Post Topic'/>
             <textarea onChange={updateCreateFormField} value={createForm.description} name='description' placeholder='Post Body'/>
             <input onChange={updateCreateFormField} value={createForm.postCategory} name='postCategory' placeholder='Post Category'/>
-            <button type='submit'>
+            <button className='form-btn' type='submit'>
             Create Post
             <i class="fa-solid fa-pen"></i>
             </button>
