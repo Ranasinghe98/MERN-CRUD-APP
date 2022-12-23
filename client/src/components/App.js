@@ -23,7 +23,7 @@ const App = () => {
   const fetchPosts = async () => {
     try{
       //fetch the posts
-      const res = await axios.get('http://localhost:8000/posts')
+      const res = await axios.get('https://mern-stack-crud.herokuapp.com/posts')
 
       //set to state
       setPosts(res.data.posts)
