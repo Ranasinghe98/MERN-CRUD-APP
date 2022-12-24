@@ -47,7 +47,7 @@ const App = () => {
   const createPost = async (event) => {
     event.preventDefault()
 
-    const res = await axios.post('http://localhost:8000/post', createForm)
+    const res = await axios.post('/post', createForm)
 
     setPosts([...posts, res.data.post])
 
@@ -60,7 +60,7 @@ const App = () => {
 //Delete Post
 const deletePost = async (_id) => {
   //Delete the post
-  await axios.delete(`http://localhost:8000/posts/${_id}`)
+  await axios.delete(`/posts/${_id}`)
 
   //update State
   const newPosts = [...posts].filter( post => {
@@ -95,7 +95,7 @@ const updatePost = async (event) => {
   event.preventDefault()
   //send the update request
   const {topic, description, postCategory} = updateForm
-  const res = await axios.put(`http://localhost:8000/posts/${updateForm._id}`, {
+  const res = await axios.put(`/posts/${updateForm._id}`, {
     topic,
     description,
     postCategory
