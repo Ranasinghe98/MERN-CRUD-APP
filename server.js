@@ -32,15 +32,15 @@ app.use(cors())
 // app.use(postRoutes)
 
 
-app.get("https://mern-stack-crud.herokuapp.com//posts", postRoutes.fetchPosts)
+app.get("https://mern-stack-crud.herokuapp.com/posts", postRoutes.fetchPosts)
 
-app.get("https://mern-stack-crud.herokuapp.com//post/:id", postRoutes.fetchPost)
+app.get("https://mern-stack-crud.herokuapp.com/post/:id", postRoutes.fetchPost)
 
-app.post('https://mern-stack-crud.herokuapp.com//post', postRoutes.createPost)
+app.post('https://mern-stack-crud.herokuapp.com/post', postRoutes.createPost)
 
-app.put('https://mern-stack-crud.herokuapp.com//posts/:id', postRoutes.updatePost)
+app.put('https://mern-stack-crud.herokuapp.com/posts/:id', postRoutes.updatePost)
 
-app.delete('https://mern-stack-crud.herokuapp.com//posts/:id', postRoutes.deletePost)
+app.delete('https://mern-stack-crud.herokuapp.com/posts/:id', postRoutes.deletePost)
 
 
 //Serve static assets if in production
